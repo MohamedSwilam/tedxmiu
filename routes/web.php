@@ -23,6 +23,6 @@ Route::get('/sponsor', 'pagesController@sponsor');
 
 /*Route::resource('events', 'eventsController');*/
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', 'AdminController@index')->middleware('verified');;
