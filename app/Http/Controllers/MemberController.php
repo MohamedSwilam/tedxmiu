@@ -23,4 +23,17 @@ class MemberController extends Controller
             ->get();
         return fractal($board, new MemberTransformer());
     }
+
+    public function getTeam($yearID, $HeadTypeID)
+    {
+        $members = Member::with(array('user','user.userType' ,'photo','year'))
+            ->whereHas('user.userType', function ($q) use ($HeadTypeID){
+                $q->where('user_types.parent','=', $HeadTypeID);
+                $q->orderBy('user_types.parent','asc');
+            })->whereHas('year', function ($q) use ($yearID){
+                $q->where('years.id','=', $yearID);
+            })
+            ->get();
+        return fractal($members, new MemberTransformer());
+    }
 }
