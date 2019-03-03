@@ -21,6 +21,7 @@ Route::group(['prefix' => 'events'], function () {
 Route::group(['prefix' => 'years'], function () {
     Route::get('', 'YearController@index');
     Route::get('/board', 'MemberController@getBoard');
+    Route::get('/team/{yearID}/{HeadTypeID}', 'MemberController@getTeam');
 });
 
 Route::group(['prefix' => 'speaker'], function () {
