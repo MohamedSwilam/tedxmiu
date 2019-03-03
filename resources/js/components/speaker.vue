@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <loader  v-if="!requested" class='loader'></loader>
+        <loader v-if="!requested" class='loader'></loader>
         <div v-if="requested">
             <div class="speaker-header">
                 <h2 class="speaker-name to-animate">{{speaker["user"].name}}</h2>
@@ -78,7 +78,7 @@
         width: 100%;
         text-align: center;
         padding-bottom: 15px;
-        border-bottom: 2px dotted #dedede;
+        /*border-bottom: 2px dotted #dedede;*/
     }
 
     #speaker .speaker-title {

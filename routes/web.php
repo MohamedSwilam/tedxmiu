@@ -15,7 +15,7 @@ Route::get('/', 'pagesController@home');
 Route::get('/about', 'pagesController@about');
 Route::get('/team', 'pagesController@teams');
 Route::get('/team/{year_id}', 'pagesController@team');
-Route::get('/team/{year_id}/{department_name}', 'pagesController@department');
+Route::get('/team/{year_id}/{user_id}', 'pagesController@department');
 Route::get('/event', 'pagesController@events');
 Route::get('/event/{event_id}', 'pagesController@event');
 Route::get('/speaker/{speaker_id}', 'pagesController@speaker');

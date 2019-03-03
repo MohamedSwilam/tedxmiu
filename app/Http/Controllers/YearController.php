@@ -15,8 +15,9 @@ class YearController extends Controller
      */
     public function index()
     {
-        $years = Year::all()
-            ->sortByDesc('id');
+        $years = Year::with(array('photo'))
+            ->orderBy('id','desc')
+            ->get();
         return fractal($years, new YearTransformer());
     }
 }

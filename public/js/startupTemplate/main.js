@@ -391,11 +391,11 @@ $(document).ready(function() {
         Animate("#notify",200);
         // Animate("#events",200);
         Animate("#mission",200);
-        Animate("#team",200);
+        // Animate("#team",200);
         Animate("#footer",200);
         // Animate("#timeline",1000);
         // Animate("#event-header",300);
-        Animate("#teams",300);
+        // Animate("#teams",300);
 
         /*=====================================
        END Animations
