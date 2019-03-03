@@ -13,19 +13,26 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getBoard()
+    public function getBoard($yearID)
     {
         $board = Member::with(array('user','user.userType' ,'photo','year'))
             ->whereHas('user.userType', function ($q){
                 $q->where('user_types.parent','=', '1');
                 $q->orderBy('user_types.parent','asc');
+            })->whereHas('year', function ($q) use ($yearID){
+                $q->where('years.id','=', $yearID);
             })
             ->get();
         return fractal($board, new MemberTransformer());
     }
 
-    public function getTeam($yearID, $HeadTypeID)
+    public function getTeam($yearID, $HeadID)
     {
+        $head = Member::with('user','user.userType' ,'photo','year')
+            ->whereHas('user', function ($q) use ($HeadID){
+                $q->where('users.id','=', $HeadID);
+            })->get();
+        $HeadTypeID = $head[0]["user"]->toArray()["user_type"]["id"];
         $members = Member::with(array('user','user.userType' ,'photo','year'))
             ->whereHas('user.userType', function ($q) use ($HeadTypeID){
                 $q->where('user_types.parent','=', $HeadTypeID);
@@ -34,6 +41,7 @@ class MemberController extends Controller
                 $q->where('years.id','=', $yearID);
             })
             ->get();
-        return fractal($members, new MemberTransformer());
+//        return array(1, 2, 3);
+        return array(fractal($head, new MemberTransformer()), fractal($members, new MemberTransformer()));
     }
 }

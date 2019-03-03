@@ -13,4 +13,8 @@ class Year extends Model
     public function member(){
         return $this->hasMany(Member::class);
     }
+
+    public function photo(){
+        return $this->belongsTo(Photo::class,'photo_id');
+    }
 }

@@ -14,6 +14,10 @@ class Photo extends Model
         return $this->hasMany(Talk::class);
     }
 
+    public function year(){
+        return $this->hasMany(Year::class);
+    }
+
     public function member(){
         return $this->hasMany(Member::class);
     }

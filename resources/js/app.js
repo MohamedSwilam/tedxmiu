@@ -32,6 +32,10 @@ Vue.component('speaker', require('./components/speaker.vue').default);
 Vue.component('home-speaker', require('./components/home/home-speakers.vue').default);
 Vue.component('home-events', require('./components/home/home-events.vue').default);
 
+Vue.component('teams', require('./components/teams.vue').default);
+Vue.component('board', require('./components/board.vue').default);
+Vue.component('team', require('./components/team.vue').default);
+
 
 Vue.component('loader', require('./components/loaders/loader.vue').default);
 Vue.component('circular-loader', require('./components/loaders/circular-loader.vue').default);

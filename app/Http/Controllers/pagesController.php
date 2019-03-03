@@ -24,17 +24,18 @@ class pagesController extends Controller
     }
 
     public function team($year_id){
-        return view('pages/team/team')->with('yearID',$year_id);
+        return view('pages/team/team')->with('year_id',$year_id);
     }
 
-    public function department($department_name){
-        return view('pages/team/department')->with('departmentName',$department_name);
+    public function department($year_id, $user_id){
+        $data = [
+            'year_id'  => $year_id,
+            'user_id'   => $user_id,
+        ];
+        return view('pages/team/department')->with($data);
     }
 
     public function event($event_id){
-        //$e1 = new eventsController();
-        //$event = $e1->search('events.id',$event_id);
-        //return $event;
         return view('pages.event.event')->with('event_id',$event_id);
     }
 
