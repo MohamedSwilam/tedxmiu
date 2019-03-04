@@ -26,3 +26,8 @@ Route::get('/sponsor', 'pagesController@sponsor');
 Auth::routes(['verify' => true]);
 
 Route::get('/admin', 'AdminController@index')->middleware('verified');;
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
