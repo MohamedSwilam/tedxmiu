@@ -44,4 +44,10 @@
         max-width: 220px;
         max-height: 47px;
     }
+
+    @media (max-width: 800px){
+        #header #logo a img {
+            max-height: 35px;
+        }
+    }
 </style>
