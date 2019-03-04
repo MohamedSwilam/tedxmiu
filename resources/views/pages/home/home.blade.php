@@ -19,7 +19,7 @@
                         <span class="slide-title"><b>Elon Musk</b></span>
                         <span class="slide-info">Bullied when he was young, Musk had no friends and felt lonely, So he turned to learn coding at the age of ten. Now he is the founder of PayPal, SpaceX and Tesla.</span>
                         <br>
-                        <a href="#" class="genric-btn primary radius">View More</a>
+                        <a href="https://youtu.be/zIwLWfaAg-8" target="_blank" class="genric-btn primary radius">View More</a>
                     </div>
                     <img src="/images/elon-musk.png" style="z-index: -1;">
                 </div>
@@ -30,7 +30,7 @@
                         <span class="slide-title"><b>Newton Aduaka</b></span>
                         <span class="slide-info">Born in Nigeria, Newton and his family moved to another countery escaping the cruel violence of the war. Between 2005 and 2007 he directed the movie "Ezra", the film won many international grand prizes.</span>
                         <br>
-                        <a href="#" class="genric-btn primary radius">View More</a>
+                        <a href="https://youtu.be/PLXsUgL_wpc" target="_blank" class="genric-btn primary radius">View More</a>
                     </div>
                     <img src="/images/newton.png" style="z-index: -1;">
                 </div>
@@ -41,7 +41,7 @@
                         <span class="slide-title"><b>Matthew Cartter</b></span>
                         <span class="slide-info">Born in Nigeria, Newton and his family moved to another countery escaping the cruel violence of the war. Between 2005 and 2007 he directed the movie "Ezra", the film won many international grand prizes.</span>
                         <br>
-                        <a href="#" class="genric-btn primary radius">View More</a>
+                        <a href="https://youtu.be/xjxyEwjG2Es" target="_blank" class="genric-btn primary radius">View More</a>
                     </div>
                     <img src="/images/matthew.png" style="z-index: -1;">
                 </div>
@@ -271,7 +271,7 @@
         height: 90vh;
         margin: 0 auto;
         position: relative;
-        top: 11vh;
+        top: 75px;
     }
 
     #slider .genric-btn.primary{
@@ -354,11 +354,11 @@
 
     @media screen and (max-width: 1100px) {
         #slider {
-            height: 70vh;
+            height: 400px;
         }
 
         #slider .slide .slide-content img {
-            height: 70vh;
+            height: 400px;
         }
 
         #slider .slide-content-info .slide-info {
@@ -370,17 +370,17 @@
         }
 
         #slider .slider-nav-content .bullet-list {
-            top: 29vh;
+            top: 175px;
         }
     }
 
     @media screen and (max-width: 850px) {
         #slider {
-            height: 60vh;
+            height: 300px;
         }
 
         #slider .slide .slide-content img {
-            height: 60vh;
+            height: 300px;
         }
 
         #slider .slide-content-info .slide-info {
@@ -394,17 +394,24 @@
         }
 
         #slider .slider-nav-content .bullet-list {
-            top: 25vh;
+            top: 125px;
         }
     }
 
+    @media (max-width: 800px){
+        #slider {
+            top: 60px;
+        }
+    }
+
+
     @media screen and (max-width: 720px) {
         #slider {
-            height: 40vh;
+            height: 270px;
         }
 
         #slider .slide .slide-content img {
-            height: 40vh;
+            height: 270px;
         }
 
         #slider .slide-content-info {
@@ -432,7 +439,7 @@
         }
 
         #slider .slider-nav-content .bullet-list {
-            top: 16vh;
+            top: 110px;
         }
 
         #slider .bullet {
@@ -444,11 +451,11 @@
 
     @media screen and (max-width: 500px) {
         #slider {
-            height: 40vh;
+            height: 200px;
         }
 
         #slider .slide .slide-content img {
-            height: 40vh;
+            height: 200px;
         }
 
         #slider .slide-content-title {
@@ -466,17 +473,25 @@
         #slider .slide-content-info .slide-info {
             line-height: 15px;
             width: 110px;
+            font-size: 7px;
         }
 
         #slider .slide-content-info a {
             height: 27px;
-            line-height: 2.2;
-            width: auto;
-            padding: 0px 10px;
+            position: relative;
+            line-height: 2.8;
+            top: -15px;
+            width: 70px;
+            font-size: 9px;
+            padding: 0px 5px;
         }
 
         #slider .slide-content-info span b {
-            font-size: 18px;
+            font-size: 16px;
+        }
+
+        #slider .slider-nav-content .bullet-list {
+            top: 75px;
         }
     }
 
