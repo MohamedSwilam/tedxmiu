@@ -17,7 +17,7 @@ class CreateMembersTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('university_id');
-            $table->integer('photo_id');
+            $table->string('photo');
             $table->integer('year_id');
             $table->text('mini_bio');
             $table->longText('bio');

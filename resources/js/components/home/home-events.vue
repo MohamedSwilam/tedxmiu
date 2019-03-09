@@ -13,15 +13,15 @@
         <div class="row">
             <div class="col-lg-6 outter-single-block" v-for="event in events">
                 <div class="single-blog to-animate">
-                    <img class="img-fluid" :src="'/images/'+event['photo'].photo" alt="">
+                    <img class="img-fluid" :src="'/storage/'+event.photo" alt="">
                     <div class="single-blog-info">
                         <a href="#">
                             <h4>{{event.name}}</h4>
                         </a>
                         <!--31st January, 2018-->
                         <p class="post-date">{{event.date}}</p>
-                        <p>
-                            {{event.mini_description}}
+                        <p v-html="event.mini_description">
+                            <!--{{event.mini_description}}-->
                         </p>
                         <p class="open-event-btn">
                             <a :href="'/event/'+event.id" class="genric-btn primary radius">Open Event</a>

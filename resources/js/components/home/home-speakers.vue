@@ -4,22 +4,20 @@
             <div class="menu-content pb-60 col-lg-10">
                 <div class="title text-center">
                     <h1 class="mb-10 to-animate">Our Speakers</h1>
-                    <p class="to-animate">Who are in extremely love with eco friendly system.</p>
+                    <p class="to-animate">Get in touch with our speakers.</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6 single-offer d-flex flex-row pb-30 to-animate" v-for="speaker in speakers">
                 <div class="icon">
-                    <img :src="'/images/'+speaker['photo'].photo" alt="">
+                    <img :src="'/storage/'+speaker.photo" alt="">
                 </div>
                 <div class="desc">
                     <a :href="'/speaker/'+speaker.id">
                         <h4>{{speaker["user"].name}}</h4>
                     </a>
-                    <p>
-                        {{speaker.mini_bio}}
-                    </p>
+                    <p v-html="speaker.mini_bio"></p>
                 </div>
             </div>
         </div>

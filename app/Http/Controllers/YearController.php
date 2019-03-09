@@ -15,9 +15,13 @@ class YearController extends Controller
      */
     public function index()
     {
-        $years = Year::with(array('photo'))
-            ->orderBy('id','desc')
-            ->get();
+        $years = Year::orderBy('id','desc')->get();
+        return fractal($years, new YearTransformer());
+    }
+
+    public function getSponsors()
+    {
+        $years = Year::with('sponsor')->orderBy('year','desc')->get();
         return fractal($years, new YearTransformer());
     }
 }

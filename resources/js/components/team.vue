@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 outter-single-block to-animate">
                     <div class="single-blog">
-                        <img class="img-fluid  fadeInUp " :src="'/images/'+head[0]['photo'].photo" alt="">
+                        <img class="img-fluid  fadeInUp " :src="'/storage/'+head[0]['user'].avatar" alt="">
                         <div class="single-blog-info  fadeInUp ">
                             <a>
                                 <h4>{{head[0]["user"].name}}</h4>
@@ -17,7 +17,7 @@
 
                 <div v-for="member in team" class="col-lg-2 col-md-3 col-sm-6 outter-single-block to-animate">
                     <div class="single-blog">
-                        <img class="img-fluid  fadeInUp " :src="'/images/'+member['photo'].photo" alt="">
+                        <img class="img-fluid  fadeInUp " :src="'/storage/'+member['user'].avatar" alt="">
                         <div class="single-blog-info  fadeInUp ">
                             <a>
                                 <h4>{{member["user"].name}}</h4>
@@ -55,6 +55,7 @@
             getData(yearid, userid){
                 var fire = this;
                 axios.get(`/api/years/${yearid}/${userid}`).then(function(response){
+                    console.log(response);
                     fire.head = response.data[0].data;
                     fire.team = response.data[1].data;
                     fire.requested = true;

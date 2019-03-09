@@ -28,10 +28,18 @@ Route::group(['prefix' => 'speaker'], function () {
     Route::get('/{speaker_id}', 'TalkController@getOnly');
 });
 
+Route::group(['prefix' => 'sponsors'], function () {
+    Route::get('', 'YearController@getSponsors');
+});
+
 Route::group(['prefix' => 'home'], function () {
     Route::get('/speakers', 'TalkController@getRandom');
     Route::get('/events/{counter}', 'eventsController@getLast');
+    Route::get('/lastboard', 'MemberController@getLastBoard');
 });
+
+
+
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

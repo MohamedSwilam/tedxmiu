@@ -11,13 +11,13 @@ class TalkController extends Controller
 {
     public function getOnly($talk_id)
     {
-        $talk = Talk::with(array('user','user.userType','video', 'photo'))
+        $talk = Talk::with(array('user','user.userType'))
             ->find($talk_id);
         return fractal($talk, new TalkTransformer());
     }
 
     public function getRandom(){
-        $talks = Talk::with(array('user', 'user.userType','photo'))
+        $talks = Talk::with(array('user', 'user.userType'))
             ->orderBy(DB::raw('RAND()'))
             ->take(4)->get();
         return fractal($talks, new TalkTransformer());
