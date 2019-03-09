@@ -3,7 +3,7 @@
         <div class="row d-flex justify-content-center">
             <div class="menu-content col-lg-8">
                 <div class="title text-center to-animate">
-                    <h1 class="mb-10  fadeInUp ">HIGH BOARD '19</h1>
+                    <h1 class="mb-10  fadeInUp ">HIGH BOARD</h1>
                 </div>
             </div>
         </div>
@@ -11,7 +11,7 @@
         <div v-if="requested" class="row">
             <div v-for="member in board" class="col-lg-2 col-md-3 col-sm-6 outter-single-block to-animate">
                 <div class="single-blog">
-                    <img class="img-fluid  fadeInU " :src="'/images/'+member['photo'].photo" alt="">
+                    <img class="img-fluid  fadeInU " :src="'/storage/'+member['user'].avatar" alt="">
                     <div class="single-blog-info  fadeInUp ">
                         <a :href="'/team/'+member.year_id+'/'+member['user'].id">
                             <h4>{{member["user"].name}}</h4>
@@ -57,6 +57,9 @@
 </script>
 
 <style>
+    #team{
+        margin-top: 70px;
+    }
     #team .open-event-btn {
         text-align: center;
     }

@@ -47,14 +47,14 @@
         <div class="row footer-bottom d-flex justify-content-between">
             <p class="col-lg-8 col-sm-12 footer-text m-0 text-white to-animate">
                 This independent TEDx event is operated under license from TED <br> Copyright &copy; All rights reserved
-                | Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                | Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#"
                     target="_blank"><b style="font-weight: bold;"> IT team</b></a>
             </p>
             <div class="col-lg-4 col-sm-12 footer-social">
-                <a class=" to-animate" href="#"><i class="fab fa-facebook-f"></i></a>
-                <a class=" to-animate" href="#"><i class="fab fa-twitter"></i></a>
-                <a class=" to-animate" href="#"><i class="fab fa-instagram"></i></a>
-                <a class=" to-animate" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class=" to-animate" href="https://www.facebook.com/TEDxMIU/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a class=" to-animate" href="https://twitter.com/tedxmiu" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class=" to-animate" href="https://www.instagram.com/tedxmiu/" target="_blank"><i class="fab fa-instagram"></i></a>
+                {{--<a class=" to-animate" href="#"><i class="fab fa-linkedin-in"></i></a>--}}
             </div>
         </div>
     </div>

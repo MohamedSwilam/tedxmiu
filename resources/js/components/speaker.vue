@@ -10,10 +10,10 @@
                 <h3 class="mb-30 to-animate">ABOUT</h3>
                 <div class="row">
                     <div class="col-md-3 speaker-img to-animate">
-                        <img :src="'/images/'+speaker['photo'].photo" alt="" class="img-fluid">
+                        <img :src="'/storage/'+speaker.photo" alt="" class="img-fluid">
                     </div>
                     <div class="col-md-9 mt-sm-20 justify to-animate">
-                        <p>{{speaker.bio}}</p>
+                        <p v-html="speaker.bio"></p>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                         <div class="overlay overlay-bg"></div>
                         <div class="container">
                             <div class="video-content">
-                                <a :href="speaker['video'].url" class="play-btn"><img src="/images/play-btn.png" alt=""></a>
+                                <a :href="speaker.video" class="play-btn"><img src="/images/play-btn.png" alt=""></a>
                             </div>
                         </div>
                     </section>

@@ -17,14 +17,14 @@
             <loader v-if="!requested" class='loader'></loader>
             <div v-for="(event, index) in events" class="col-lg-6 outter-single-block to-animate">
                 <div class="single-blog">
-                    <img class="img-fluid" :src="'/storage/images/'+event.photo.photo" alt="">
+                    <img class="img-fluid" :src="'/storage/'+event.photo" alt="">
                     <div class="single-blog-info">
                         <a :href="'/event/'+event.id">
                             <h4>{{event.name}}</h4>
                         </a>
                         <!--31st January, 2018-->
                         <p class="post-date">{{event.date.split(" ")[0]}}</p>
-                        <p>{{event.mini_description}}</p>
+                        <p v-html="event.mini_description"></p>
                         <p class="open-event-btn">
                             <a :href="'/event/'+event.id" class="genric-btn primary radius">Open Event</a>
                         </p>

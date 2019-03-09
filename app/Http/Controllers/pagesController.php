@@ -52,4 +52,8 @@ class pagesController extends Controller
     public function sponsor(){
         return view('pages/sponsor/sponsor');
     }
+
+    public function profile(){
+        return view('pages.profile.profile');
+    }
 }

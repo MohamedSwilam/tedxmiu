@@ -10,9 +10,9 @@ class event extends Model
         return $this->belongsTo(Year::class,'year_id');
     }
     
-    public function photo(){
-        return $this->belongsTo(Photo::class,'photo_id');
-    }
+//    public function photo(){
+//        return $this->belongsTo(Photo::class,'photo_id');
+//    }
 
     public function talk(){
         return $this->hasMany(Talk::class);

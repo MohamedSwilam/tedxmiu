@@ -20,8 +20,8 @@ class CreateTalksTable extends Migration
             $table->string('title');
             $table->text('mini_bio');
             $table->longText('bio');
-            $table->integer('photo_id');
-            $table->integer('video_id');
+            $table->string('photo');
+            $table->string('video');
             $table->timestamps();
         });
     }

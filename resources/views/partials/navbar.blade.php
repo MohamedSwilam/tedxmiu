@@ -18,6 +18,12 @@
                         <li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
                             <ul>
                                 <li>
+                                    <a href="/profile"><i class="fas fa-user"></i> Profile</a>
+                                </li>
+                                <li>
+                                    <a href="/profile"><i class="fas fa-cog"></i> Settings</a>
+                                </li>
+                                <li>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Logout</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

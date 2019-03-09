@@ -14,7 +14,7 @@ class Year extends Model
         return $this->hasMany(Member::class);
     }
 
-    public function photo(){
-        return $this->belongsTo(Photo::class,'photo_id');
+    public function sponsor(){
+        return $this->hasMany(Sponsor::class);
     }
 }

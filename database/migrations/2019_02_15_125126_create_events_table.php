@@ -16,12 +16,13 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->timestamp('date');
+            $table->date('date');
             $table->integer('year_id');
             $table->text('mini_description');
             $table->longText('description');
             $table->Text('location_title');
-            $table->integer('photo_id');
+//            $table->integer('photo_id');
+            $table->string('photo');
             $table->Text('location_link');
             $table->timestamps();
         });

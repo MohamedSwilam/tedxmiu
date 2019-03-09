@@ -18,7 +18,7 @@ class eventsController extends Controller
      */
     public function index()
     {
-        $events = event::with(array('year','photo'))
+        $events = event::with(array('year'))
         ->orderBy('events.date', 'desc')
         ->get();
 //        Mail::to('mohamed_swilam@hotmail.com')->send(
@@ -36,7 +36,7 @@ class eventsController extends Controller
      */
     public function getLast($number)
     {
-        $events = event::with(array('year','photo'))
+        $events = event::with(array('year'))
         ->orderBy('events.id', 'desc')
         ->take($number)->get();
 
@@ -53,7 +53,7 @@ class eventsController extends Controller
      */
     public function getOnly($eventID)
     {
-        $event = event::with(array('talk','talk.photo','talk.user', 'photo'))
+        $event = event::with(array('talk','talk.user'))
         ->find($eventID);
         return fractal($event, new EventTransformer());
     }

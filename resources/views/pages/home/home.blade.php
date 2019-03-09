@@ -108,88 +108,7 @@
 </section>
 
 <section class="latest-blog-area section-gap" id="team">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content col-lg-8">
-                <div class="title text-center">
-                    <h1 class="mb-10 to-animate">Our Team</h1>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-2 outter-single-block">
-                <div class="single-blog">
-                    <img class="img-fluid to-animate" src="/images/23-Host-Baherelnewehy.jpg" alt="">
-                    <div class="single-blog-info to-animate">
-                        <a>
-                            <h4>ALPHA</h4>
-                        </a>
-                        <p class="post-date">President</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 outter-single-block">
-                <div class="single-blog">
-                    <img class="img-fluid to-animate" src="/images/23-Host-Baherelnewehy.jpg" alt="">
-                    <div class="single-blog-info to-animate">
-                        <a>
-                            <h4>ALPHA</h4>
-                        </a>
-                        <p class="post-date">President</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 outter-single-block">
-                <div class="single-blog">
-                    <img class="img-fluid to-animate" src="/images/23-Host-Baherelnewehy.jpg" alt="">
-                    <div class="single-blog-info to-animate">
-                        <a>
-                            <h4>ALPHA</h4>
-                        </a>
-                        <p class="post-date">President</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 outter-single-block">
-                <div class="single-blog">
-                    <img class="img-fluid to-animate" src="/images/23-Host-Baherelnewehy.jpg" alt="">
-                    <div class="single-blog-info to-animate">
-                        <a>
-                            <h4>ALPHA</h4>
-                        </a>
-                        <p class="post-date">President</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 outter-single-block">
-                <div class="single-blog">
-                    <img class="img-fluid to-animate" src="/images/23-Host-Baherelnewehy.jpg" alt="">
-                    <div class="single-blog-info to-animate">
-                        <a>
-                            <h4>ALPHA</h4>
-                        </a>
-                        <p class="post-date">President</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 outter-single-block">
-                <div class="single-blog">
-                    <img class="img-fluid to-animate" src="/images/23-Host-Baherelnewehy.jpg" alt="">
-                    <div class="single-blog-info to-animate">
-                        <a>
-                            <h4>ALPHA</h4>
-                        </a>
-                        <p class="post-date">President</p>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="title text-center to-animate" style="width: 100%;">
-                <a href="#" class="genric-btn primary radius arrow">View Team<span class="lnr lnr-arrow-right"></span></a>
-            </div>
-        </div>
-    </div>
+    <home-team></home-team>
 </section>
 @endsection
  
@@ -496,46 +415,5 @@
     }
 
     /******************************** END SLIDER SECTION ********************************/
-
-
-    /******************************** START TEAM SECTION ********************************/
-
-    #team {
-        padding-top: 60px;
-    }
-
-    #team .open-event-btn {
-        text-align: center;
-    }
-
-    #team .single-blog-info {
-        padding: 15px;
-        text-align: center;
-    }
-
-    #team .single-blog img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-    }
-
-    #team .single-blog {
-        padding: 0;
-    }
-
-    #team .outter-single-block {
-        padding: 15px;
-        text-align: center;
-    }
-
-    #team .single-blog-info {
-        padding: 15px;
-    }
-
-    .latest-blog-area .single-blog h4 {
-        padding-bottom: 0px;
-    }
-
-    /******************************** END TEAM SECTION ********************************/
 </style>
 @endsection

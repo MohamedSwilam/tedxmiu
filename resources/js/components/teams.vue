@@ -12,7 +12,7 @@
         <div class="row" v-if="requested">
             <div class="col-lg-6 outter-single-block" v-for="team in teams">
                 <div class="single-blog to-animate">
-                    <img class="img-fluid" :src="'/images/'+team['photo'].photo" alt="">
+                    <img class="img-fluid" :src="'/storage/'+team.photo" alt="">
                     <div class="single-blog-info">
                         <h4>{{team.year}}</h4>
                         <p class="open-team-btn">

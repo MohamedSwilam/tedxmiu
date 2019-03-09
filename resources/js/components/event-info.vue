@@ -8,11 +8,11 @@
                         <h2 class="header-name">{{event.name}}<span class="header-x">X</span></h2>
                     </div>
                     <div class="event-photo to-animate">
-                        <img :src="'/images/'+event['photo'].photo">
+                        <img :src="'/storage/'+event.photo">
                     </div>
 
                     <div class="section-top-border">
-                        <h5 class="mb-30 to-animate">{{event.description}}</h5>
+                        <h5 class="mb-30 to-animate" v-html="event.description"></h5>
                         <div class="row">
                             <div class="col-md-4 to-animate">
                                 <div class="single-defination">
@@ -51,14 +51,14 @@
                         <div class="padding-15">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img :src="'/images/'+talk['photo'].photo" :alt="talk['user'].name" class="img-fluid">
+                                    <img :src="'/storage/'+talk.photo" :alt="talk['user'].name" class="img-fluid">
                                 </div>
                                 <div class="col-md-9 mt-sm-20">
                                     <div class="timeline-heading">
                                         <h4>{{talk['user'].name}}</h4>
                                     </div>
                                     <div class="timeline-body">
-                                        <p>{{talk.mini_bio}}</p>
+                                        <p v-html="talk.mini_bio"></p>
                                         <a :href="'/speaker/'+talk.id" class="genric-btn primary radius medium">VIEW MORE</a>
                                     </div>
                                 </div>

@@ -13,12 +13,4 @@ class Talk extends Model
     public function event(){
         return $this->belongsTo(event::class,'event_id');
     }
-
-    public function photo(){
-        return $this->belongsTo(Photo::class,'photo_id');
-    }
-
-    public function video(){
-        return $this->belongsTo(Video::class,'video_id');
-    }
 }
