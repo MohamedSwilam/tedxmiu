@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\ArticlesEmail;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -63,6 +64,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $ArticlesEmail = new ArticlesEmail();
+        $ArticlesEmail->email = $data['email'];
+        $ArticlesEmail->save();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

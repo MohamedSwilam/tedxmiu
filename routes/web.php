@@ -21,6 +21,7 @@ Route::get('/event/{event_id}', 'pagesController@event');
 Route::get('/speaker/{speaker_id}', 'pagesController@speaker');
 Route::get('/sponsor', 'pagesController@sponsor');
 
+
 /*Route::resource('events', 'eventsController');*/
 
 Auth::routes(['verify' => true]);

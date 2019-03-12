@@ -29,6 +29,7 @@ Vue.component('events', require('./components/events.vue').default);
 Vue.component('event-info', require('./components/event-info.vue').default);
 Vue.component('speaker', require('./components/speaker.vue').default);
 Vue.component('sponsors', require('./components/sponsors.vue').default);
+Vue.component('x-footer', require('./components/footer.vue').default);
 
 Vue.component('home-speaker', require('./components/home/home-speakers.vue').default);
 Vue.component('home-events', require('./components/home/home-events.vue').default);
