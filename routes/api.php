@@ -38,6 +38,7 @@ Route::group(['prefix' => 'home'], function () {
     Route::get('/lastboard', 'MemberController@getLastBoard');
 });
 
+Route::post('/email','ArticlesEmailController@store');
 
 
 

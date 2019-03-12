@@ -31,8 +31,9 @@
 @include('partials.navbar')
 <div id="app">
     @yield('content')
+    @include('partials.footer')
 </div>
-@include('partials.footer')
+
 
 
 
