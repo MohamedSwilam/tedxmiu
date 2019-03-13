@@ -25,14 +25,14 @@
                             <div class="col-md-4 to-animate">
                                 <div class="single-defination">
                                     <h4 class="mb-20"><i class="fa fa-calendar"></i> DATE</h4>
-                                    <p>18/8/2018 9:00AM - 05:00PM</p>
+                                    <p class="post-date">{{ordinal_suffix_of(event.date.split(" ")[0].split("-")[2])}} {{ monthNames[parseInt(event.date.split(" ")[0].split("-")[1])] }}, {{event.date.split(" ")[0].split("-")[0]}}</p>
                                 </div>
                             </div>
 
                             <div class="col-md-4 to-animate">
                                 <div class="single-defination">
                                     <h4 class="mb-20"><i class="fa fa-map-marker-alt"></i> LOCATION</h4>
-                                    <p>Saudi Germany Hospital Auditorium</p>
+                                    <p><a :href="event.location_link" target="_blank">{{event.location_title}}</a></p>
                                 </div>
                             </div>
                         </div>
@@ -65,11 +65,11 @@
                             </div>
                         </div>
                         <div class="timeline-footer">
-                            <p class="text-right"><i class="fa fa-clock"></i> {{talk.from.split(":")[0]}}:{{talk.from.split(":")[1]}}</p>
+                            <p class="text-right"><i class="fa fa-clock"></i> {{tConv24(talk.from)}} </p>
                         </div>
                     </div>
                 </li>
-                <li class="clearfix no-float"></li>
+                <li class="clearfix no-float" style="z-index: -1;"></li>
             </ul>
         </div>
     </div>
@@ -89,7 +89,8 @@
           data: function () {
             return {
                 event: [],
-                requested: false
+                requested: false,
+                monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
             }
           },
         methods: {
@@ -106,6 +107,26 @@
                 }).catch(function(error){
                     console.log(error);
                 });
+            }, tConv24(time24) {
+                let H = +time24.substr(0, 2);
+                let h = (H % 12) || 12;
+                h = (h < 10) ? ("0" + h) : h;  // leading 0 at the left for 1 digit hours
+                var ampm = H < 12 ? " AM" : " PM";
+                time24 = h + time24.substr(2, 3) + ampm;
+                return time24;
+            }, ordinal_suffix_of(num) {
+                let j = num % 10,
+                    k = num % 100;
+                if (j == 1 && k != 11) {
+                    return num + "st";
+                }
+                if (j == 2 && k != 12) {
+                    return num + "nd";
+                }
+                if (j == 3 && k != 13) {
+                    return num + "rd";
+                }
+                return num + "th";
             }
         }
     }

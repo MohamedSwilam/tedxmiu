@@ -23,7 +23,7 @@
                             <h4>{{event.name}}</h4>
                         </a>
                         <!--31st January, 2018-->
-                        <p class="post-date">{{event.date.split(" ")[0]}}</p>
+                        <p class="post-date">{{ordinal_suffix_of(event.date.split(" ")[0].split("-")[2])}} {{ monthNames[parseInt(event.date.split(" ")[0].split("-")[1])] }}, {{event.date.split(" ")[0].split("-")[0]}}</p>
                         <p v-html="event.mini_description"></p>
                         <p class="open-event-btn">
                             <a :href="'/event/'+event.id" class="genric-btn primary radius">Open Event</a>
@@ -31,8 +31,6 @@
                     </div>
                 </div>
             </div>
-
-
             <h1 v-if="events.length == 0 && requested == true" style="text-align:center;width:100%;margin-top:25px;">No
                 Events Available Yet!</h1>
         </div>
@@ -40,24 +38,18 @@
 </template>
 
 <script>
-    import AOS from 'aos';
-    import 'aos/dist/aos.css';
-    import animate from '../../../public/js/animate.js'
-
-    Vue.use(AOS)
+    import animate from '../../../public/js/animate.js';
 
     export default {
         name: 'events',
-        created() {
-            AOS.init();
-        },
         mounted() {
             this.getData();
         },
         data: function () {
             return {
                 events: [],
-                requested: false
+                requested: false,
+                monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
             }
         },
         methods: {
@@ -79,6 +71,19 @@
                 var ampm = H < 12 ? " AM" : " PM";
                 ts = h + ts.substr(2, 3) + ampm;
                 return ts;
+            }, ordinal_suffix_of(num) {
+                let j = num % 10,
+                    k = num % 100;
+                if (j == 1 && k != 11) {
+                    return num + "st";
+                }
+                if (j == 2 && k != 12) {
+                    return num + "nd";
+                }
+                if (j == 3 && k != 13) {
+                    return num + "rd";
+                }
+                return num + "th";
             }
         }
     }
@@ -100,7 +105,7 @@
     }
 
     #events {
-        padding-top: 160px;
+        margin-top: 80px;
     }
 
     #events .open-event-btn {
