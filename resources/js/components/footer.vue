@@ -80,40 +80,27 @@
         methods: {
             submit(){
                 let fire = this;
+                let footer = false;
+                if(!fire.auth){
+                    footer = 'You can register <a href="/register">&nbsp;here&nbsp;</a> for more features.'
+                }
                 if(this.email != null && this.email != "" && this.validateEmail(this.email)){
                     const formData = new FormData();
                     formData.append('email', this.email);
                     axios.post('/api/email', formData).then(function (response) {
-                        console.log(response.data.response);
-                        let footer = false;
-                        if(!fire.auth){
-                            footer = 'You can register <a href="/register">&nbsp;here&nbsp;</a> for more features.'
-                        }
                         if(response.data.response){
-                            fire.swalAlert(
-                                'success',
-                                'Good job!',
-                                'Our Inspiration talks will be sent to your email.',
-                                footer
-                            );
-                        } else {
-                            fire.swalAlert(
-                                'error',
-                                'Oops...',
-                                'Your email has been already registered!',
-                                footer
-                            );
+                            fire.swalAlert('success', 'Good job!',
+                                'Our Inspiration talks will be sent to your email.', footer);
+                        } else{
+                            fire.swalAlert('error', 'Oops...',
+                                'Your email has been already registered!',footer);
                         }
                     }).catch(function (error) {
                        console.log(error);
                     });
                 }else{
-                    Swal.fire({
-                        type: 'error',
-                        title: 'Oops...',
-                        text: 'Please, enter a valid email!',
-                        footer: 'You can register <a href="/register">&nbsp;here&nbsp;</a> for more features.'
-                    });
+                    fire.swalAlert('error', 'Oops...',
+                        'Please, enter a valid email!',footer);
                 }
             }, validateEmail(email) {
                 var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

@@ -4,6 +4,7 @@
             <div class="menu-content col-lg-8">
                 <div class="title text-center to-animate">
                     <h1 class="mb-10  fadeInUp ">HIGH BOARD</h1>
+                    <h4 class="mb-10  fadeInUp ">{{board[0].year.year}}</h4>
                 </div>
             </div>
         </div>
@@ -13,9 +14,10 @@
                 <div class="single-blog">
                     <img class="img-fluid  fadeInU " :src="'/storage/'+member['user'].avatar" alt="">
                     <div class="single-blog-info  fadeInUp ">
-                        <a :href="'/team/'+member.year_id+'/'+member['user'].id">
+                        <a v-if="member.user.user_type.has_members == 1" :href="'/team/'+member.year_id+'/'+member['user'].id">
                             <h4>{{member["user"].name}}</h4>
                         </a>
+                        <h4 v-else>{{member["user"].name}}</h4>
                         <p class="post-date">{{member["user"].user_type.type}}</p>
                     </div>
                 </div>
@@ -60,6 +62,7 @@
     #team{
         margin-top: 70px;
     }
+
     #team .open-event-btn {
         text-align: center;
     }
@@ -72,7 +75,6 @@
     #team .single-blog img {
         max-width: 150px;
         max-height: 150px;
-        /*border-radius: 50%;*/
     }
 
     #team .single-blog {
