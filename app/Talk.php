@@ -13,4 +13,8 @@ class Talk extends Model
     public function event(){
         return $this->belongsTo(event::class,'event_id');
     }
+
+    public function savedTalk(){
+        return $this->hasMany(savedTalk::class);
+    }
 }

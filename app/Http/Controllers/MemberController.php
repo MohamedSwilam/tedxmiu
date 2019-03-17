@@ -19,11 +19,14 @@ class MemberController extends Controller
         $board = Member::with(array('user','user.userType' ,'year'))
             ->whereHas('user.userType', function ($q){
                 $q->where('user_types.parent','=', '1');
-                $q->orderBy('user_types.parent','asc');
+                $q->orderBy('user_types.id','asc');
             })->whereHas('year', function ($q) use ($yearID){
                 $q->where('years.id','=', $yearID);
             })
-            ->get();
+            ->get()
+            ->sortBy(function ($member){
+                return $member->user->user_type_id;
+            });
         return fractal($board, new MemberTransformer());
     }
 
@@ -54,6 +57,22 @@ class MemberController extends Controller
             ->whereHas('user.userType', function ($q){
                 $q->where('user_types.parent','=', '1');
                 $q->orderBy('user_types.parent','asc');
+            })->whereHas('year', function ($q) use ($year){
+                $q->where('years.year','=', $year);
+            })
+            ->get()
+            ->sortBy(function ($member){
+                return $member->user->user_type_id;
+            });
+        return fractal($board, new MemberTransformer());
+    }
+
+        public function getLastLicenseHolder()
+    {
+        $year = Year::max('year');
+        $board = Member::with(array('user','user.userType' ,'year'))
+            ->whereHas('user.userType', function ($q){
+                $q->where('user_types.id','=', '0');
             })->whereHas('year', function ($q) use ($year){
                 $q->where('years.year','=', $year);
             })

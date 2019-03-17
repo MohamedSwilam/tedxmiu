@@ -55,7 +55,6 @@
             getData(yearid, userid){
                 var fire = this;
                 axios.get(`/api/years/${yearid}/${userid}`).then(function(response){
-                    console.log(response);
                     fire.head = response.data[0].data;
                     fire.team = response.data[1].data;
                     fire.requested = true;

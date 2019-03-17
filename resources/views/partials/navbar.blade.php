@@ -21,7 +21,10 @@
                                     <a href="/profile"><i class="fas fa-user"></i> Profile</a>
                                 </li>
                                 <li>
-                                    <a href="/profile"><i class="fas fa-cog"></i> Settings</a>
+                                    <a href="/saved-talks"><i class="fas fa-star"></i> Saved Talks</a>
+                                </li>
+                                <li>
+                                    <a href="/settings"><i class="fas fa-cog"></i> Settings</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -34,7 +37,6 @@
                             </ul>
                         </li>
                     @endguest
-                    <!-- 				          <li><a href="#blog">Blog</a></li> -->
 
                 </ul>
             </nav>

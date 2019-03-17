@@ -4,7 +4,7 @@
  
 @section('content')
 <section id="speaker">
-    <speaker :speakerid="{{$speaker_id}}"></speaker>
+    <speaker :auth="{{ Auth::check() ? Auth::user() : "false" }}" :speakerid="{{$speaker_id}}"></speaker>
 </section>
 @endsection
  
