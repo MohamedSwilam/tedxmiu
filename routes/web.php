@@ -28,6 +28,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/admin', 'AdminController@index')->middleware('verified');
 Route::get('/profile', 'pagesController@profile')->middleware('verified');
+Route::get('/saved-talks', 'pagesController@savedTalks')->middleware('verified');
+Route::get('/settings', 'pagesController@setting')->middleware('verified');
 
 
 Route::group(['prefix' => 'admin'], function () {

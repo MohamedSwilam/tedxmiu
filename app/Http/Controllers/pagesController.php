@@ -56,4 +56,12 @@ class pagesController extends Controller
     public function profile(){
         return view('pages.profile.profile');
     }
+
+    public function savedTalks(){
+        return view('pages.profile.saved_talks');
+    }
+
+    public function setting(){
+        return view('pages.profile.setting');
+    }
 }

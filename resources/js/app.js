@@ -11,7 +11,9 @@ require('waypoints/lib/jquery.waypoints')
 window.Vue = require('vue');
 window.VueAnimate = require('vue-animate-scroll');
 
+var SocialSharing = require('vue-social-sharing');
 
+Vue.use(SocialSharing);
 Vue.use(VueAnimate);
 
 
@@ -33,10 +35,13 @@ Vue.component('event-info', require('./components/event-info.vue').default);
 Vue.component('speaker', require('./components/speaker.vue').default);
 Vue.component('sponsors', require('./components/sponsors.vue').default);
 Vue.component('x-footer', require('./components/footer.vue').default);
+Vue.component('license-holder', require('./components/license-holder.vue').default);
 
 Vue.component('home-speaker', require('./components/home/home-speakers.vue').default);
 Vue.component('home-events', require('./components/home/home-events.vue').default);
 Vue.component('home-team', require('./components/home/home-team.vue').default);
+
+Vue.component('saved-talks', require('./components/profile/saved-talks.vue').default);
 
 Vue.component('teams', require('./components/teams.vue').default);
 Vue.component('board', require('./components/board.vue').default);

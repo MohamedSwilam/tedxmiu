@@ -20,6 +20,7 @@
         "resolve-url-loader": "^2.3.2",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
+        "social-sharing": "^0.2.2",
         "vue": "^2.5.15",
         "vue-loader": "^15.6.2",
         "vue-template-compiler": "^2.5.15",
@@ -31,6 +32,7 @@
         "datatables.net-dt": "^1.10.19",
         "sweetalert2": "^8.3.0",
         "vue-animate-scroll": "^0.1.5",
+        "vue-social-sharing": "^2.4.2",
         "waypoints": "^4.0.1"
     }
 }

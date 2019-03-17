@@ -20,6 +20,7 @@ Route::group(['prefix' => 'events'], function () {
 
 Route::group(['prefix' => 'years'], function () {
     Route::get('', 'YearController@index');
+    Route::get('/license-holder','MemberController@getLastLicenseHolder');
     Route::get('/{yearID}', 'MemberController@getBoard');
     Route::get('/{yearID}/{HeadID}', 'MemberController@getTeam');
 });
@@ -38,7 +39,15 @@ Route::group(['prefix' => 'home'], function () {
     Route::get('/lastboard', 'MemberController@getLastBoard');
 });
 
+Route::group(['prefix' => 'save-talk'], function () {
+    Route::post('','SavedTalkController@store');
+    Route::get('/saved-talks/{user_id}','SavedTalkController@show');
+    Route::get('/delete/{talk_id}/{user_id}','SavedTalkController@destroy');
+    Route::get('/is_saved/{talk_id}/{user_id}', 'SavedTalkController@isSaved');
+});
+
 Route::post('/email','ArticlesEmailController@store');
+
 
 
 
