@@ -42,6 +42,7 @@ Vue.component('home-events', require('./components/home/home-events.vue').defaul
 Vue.component('home-team', require('./components/home/home-team.vue').default);
 
 Vue.component('saved-talks', require('./components/profile/saved-talks.vue').default);
+Vue.component('setting', require('./components/profile/setting.vue').default);
 
 Vue.component('teams', require('./components/teams.vue').default);
 Vue.component('board', require('./components/board.vue').default);

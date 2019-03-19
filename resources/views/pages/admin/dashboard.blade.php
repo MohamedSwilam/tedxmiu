@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
     <section class="banner-area" id="dashboard">
@@ -14,7 +14,6 @@
                                     {{ session('status') }}
                                 </div>
                             @endif
-
                             You are logged in!
                         </div>
                     </div>
