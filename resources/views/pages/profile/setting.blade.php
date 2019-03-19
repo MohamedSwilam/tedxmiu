@@ -3,8 +3,9 @@
 @endsection
 
 @section('content')
-    <section class="latest-blog-area section-gap" id="team">
-        <board :yearid="{{$year_id}}"></board>
+    <section class="latest-blog-area section-gap" id="setting">
+        {{--<board :yearid="{{$year_id}}"></board>--}}
+        <setting :user="{{Auth::user()}}"></setting>
     </section>
 @endsection
 

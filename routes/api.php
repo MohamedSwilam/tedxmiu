@@ -46,11 +46,11 @@ Route::group(['prefix' => 'save-talk'], function () {
     Route::get('/is_saved/{talk_id}/{user_id}', 'SavedTalkController@isSaved');
 });
 
-Route::post('/email','ArticlesEmailController@store');
-
-
-
-
+Route::group(['prefix' => 'email'], function () {
+    Route::post('','ArticlesEmailController@store');
+    Route::delete('/{email}', 'ArticlesEmailController@destroy');
+    Route::get('/check/{email}', 'ArticlesEmailController@emailExists');
+});
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
